@@ -2,15 +2,15 @@
 
 :root {
   /* base palette — tuned to the studio's logo: charred wood, warm birch
-     tan and copper for warmth, with a cool smoke grey pulled straight from
-     the logo's steam so secondary text reads as a deliberate counterpoint
-     rather than blending into the warm background. */
+     tan and copper for warmth. Secondary/muted text (--color-stone) now
+     matches the same warm tan as the accent instead of a cool grey, so
+     nothing on the page reads as an off-palette grey next to the logo. */
   --color-ink: #130d08;
   --color-charcoal: #1b140d;
   --color-bark: #2c2013;
   --color-espresso: #40301c;
   --color-wood: #7a5230;
-  --color-stone: #7d8288;
+  --color-stone: #deb887;
   --color-smoke: #8b9096;
   --color-smoke-light: #aeb3b7;
   --color-sand: #cdbe9f;
