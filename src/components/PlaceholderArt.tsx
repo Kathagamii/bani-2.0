@@ -22,8 +22,8 @@ function buildGradient(variant: ArtVariant, seed: number): string {
 
   switch (variant) {
     case "wood":
-      return `radial-gradient(120% 100% at ${x1}% ${y1}%, #7a5636 0%, #4a3521 42%, #241a10 78%),
-              linear-gradient(${angle}deg, rgba(205,154,99,0.28) 0%, rgba(0,0,0,0) 45%)`;
+      return `radial-gradient(120% 100% at ${x1}% ${y1}%, #8a6440 0%, #55401f 42%, #241a10 78%),
+              linear-gradient(${angle}deg, rgba(222,184,135,0.32) 0%, rgba(0,0,0,0) 45%)`;
     case "stone":
       return `radial-gradient(130% 110% at ${100 - x1}% ${y1}%, #a49a89 0%, #6f6659 40%, #23201a 80%),
               linear-gradient(${angle}deg, rgba(245,240,230,0.12) 0%, rgba(0,0,0,0) 50%)`;
@@ -33,10 +33,10 @@ function buildGradient(variant: ArtVariant, seed: number): string {
               radial-gradient(100% 45% at 50% 88%, rgba(139,144,150,0.22) 0%, rgba(139,144,150,0) 70%),
               linear-gradient(180deg, #1c1712 0%, #0d0b09 100%)`;
     case "fire":
-      return `radial-gradient(85% 80% at ${65 + seed * 20}% ${75 + seed * 12}%, #cd9a63 0%, #ab7443 26%, #3c2416 58%, #120d09 82%),
+      return `radial-gradient(85% 80% at ${65 + seed * 20}% ${75 + seed * 12}%, #deb887 0%, #b98f56 26%, #3c2416 58%, #120d09 82%),
               linear-gradient(${angle}deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 60%)`;
     case "interior":
-      return `radial-gradient(85% 70% at ${x2}% ${y1}%, rgba(205,154,99,0.35) 0%, rgba(57,44,32,0.65) 35%, #14110d 75%),
+      return `radial-gradient(85% 70% at ${x2}% ${y1}%, rgba(222,184,135,0.38) 0%, rgba(57,44,32,0.65) 35%, #14110d 75%),
               linear-gradient(${angle}deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 55%)`;
     case "water":
       return `repeating-linear-gradient(${105 + seed * 20}deg, rgba(245,240,230,0.10) 0px, rgba(245,240,230,0.10) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 14px),
