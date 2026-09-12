@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { brand, nav } from "@/lib/content";
-import Logo from "./Logo";
+import LogoMark from "./LogoMark";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,11 +33,8 @@ export default function Header() {
         )}
       >
         <div className="container-edit flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-3">
-            <Logo />
-            <span className="font-serif text-lg tracking-wide text-milk md:text-xl">
-              Авторские бани
-            </span>
+          <a href="#top" className="flex items-center">
+            <LogoMark className="h-14 sm:h-16 md:h-20" priority />
           </a>
 
           <nav className="hidden lg:flex items-center gap-8">
