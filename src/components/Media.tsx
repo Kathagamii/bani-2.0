@@ -1,11 +1,13 @@
 import Image from "next/image";
 import clsx from "clsx";
+import { CSSProperties } from "react";
 import { MediaSlot } from "@/lib/content";
 import PlaceholderArt from "./PlaceholderArt";
 
 interface MediaProps {
   slot: MediaSlot;
   className?: string;
+  style?: CSSProperties;
   sizes?: string;
   priority?: boolean;
 }
@@ -15,10 +17,10 @@ interface MediaProps {
  * Пока реальных фото нет — показывает атмосферный placeholder того же
  * формата, так что замена на реальные снимки не потребует правок вёрстки.
  */
-export default function Media({ slot, className, sizes, priority }: MediaProps) {
+export default function Media({ slot, className, style, sizes, priority }: MediaProps) {
   if (slot.src) {
     return (
-      <div className={clsx("relative overflow-hidden", className)}>
+      <div className={clsx("relative overflow-hidden", className)} style={style}>
         <Image
           src={slot.src}
           alt={slot.alt}
@@ -34,6 +36,7 @@ export default function Media({ slot, className, sizes, priority }: MediaProps) 
     <PlaceholderArt
       variant={slot.variant}
       className={className}
+      style={style}
       role="img"
       aria-label={slot.alt}
     />

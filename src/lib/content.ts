@@ -13,6 +13,10 @@ export type ArtVariant = "wood" | "stone" | "steam" | "fire" | "interior" | "wat
 export interface MediaSlot {
   /** Реальный файл (заполняется позже). Пока пусто — рендерится PlaceholderArt. */
   src?: string;
+  /** Настоящие пиксельные размеры src — нужны лайтбоксу, чтобы показать фото
+   *  целиком (без принудительного кропа) без сдвига layout. */
+  width?: number;
+  height?: number;
   alt: string;
   variant: ArtVariant;
 }
@@ -169,14 +173,14 @@ export const gallery = {
   kicker: "Галерея",
   title: "Дерево, пар, свет",
   items: [
-    { alt: "Фактура термодерева", variant: "wood" },
-    { alt: "Пар в парной", variant: "steam" },
-    { alt: "Каменная кладка печи", variant: "stone" },
-    { alt: "Огонь в печи", variant: "fire" },
-    { alt: "Интерьер комнаты отдыха", variant: "interior" },
-    { alt: "Вода и купель", variant: "water" },
-    { alt: "Свет через полок", variant: "wood" },
-    { alt: "Пар и тёплый свет", variant: "steam" },
+    { src: "/gallery/1.png", width: 682, height: 919, alt: "Парная — потолок из спилов бревна и каменка", variant: "wood" },
+    { src: "/gallery/2.png", width: 1134, height: 904, alt: "Круглая парная с гималайской солью", variant: "stone" },
+    { src: "/gallery/6.png", width: 784, height: 1065, alt: "Потолок «звёздное небо» из оптоволокна", variant: "wood" },
+    { src: "/gallery/4.png", width: 1416, height: 1062, alt: "Полки и печь в парной", variant: "wood" },
+    { src: "/gallery/3.png", width: 682, height: 916, alt: "Парная — акцентная стена и дровница", variant: "wood" },
+    { src: "/gallery/8.png", width: 1210, height: 912, alt: "Многоярусные полки парной", variant: "wood" },
+    { src: "/gallery/5.png", width: 679, height: 913, alt: "Гималайская соль и полукруглые полки", variant: "stone" },
+    { src: "/gallery/9.png", width: 781, height: 1057, alt: "Полки и кирпичная кладка печи", variant: "wood" },
   ] satisfies MediaSlot[],
 };
 

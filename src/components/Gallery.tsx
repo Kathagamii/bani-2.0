@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { gallery } from "@/lib/content";
 import Media from "./Media";
@@ -57,7 +58,10 @@ export default function Gallery() {
             >
               <Media
                 slot={item}
-                className={`${ASPECTS[i % ASPECTS.length]} w-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]`}
+                className={`w-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06] ${
+                  item.width && item.height ? "" : ASPECTS[i % ASPECTS.length]
+                }`}
+                style={item.width && item.height ? { aspectRatio: `${item.width} / ${item.height}` } : undefined}
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
               />
             </button>
@@ -100,13 +104,24 @@ export default function Gallery() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-[4/5] w-full max-w-xl sm:aspect-[3/4]"
+              className="flex max-h-[85vh] max-w-[92vw] flex-col items-center"
             >
-              <PlaceholderArt
-                variant={gallery.items[active].variant}
-                className="h-full w-full"
-                aria-label={gallery.items[active].alt}
-              />
+              {gallery.items[active].src && gallery.items[active].width && gallery.items[active].height ? (
+                <Image
+                  src={gallery.items[active].src!}
+                  alt={gallery.items[active].alt}
+                  width={gallery.items[active].width}
+                  height={gallery.items[active].height}
+                  sizes="92vw"
+                  className="max-h-[75vh] w-auto max-w-[92vw] object-contain"
+                />
+              ) : (
+                <PlaceholderArt
+                  variant={gallery.items[active].variant}
+                  className="aspect-[4/5] w-full max-w-xl sm:aspect-[3/4]"
+                  aria-label={gallery.items[active].alt}
+                />
+              )}
               <p className="mt-4 text-center text-[13px] tracking-[0.08em] uppercase text-linen/50">
                 {gallery.items[active].alt}
               </p>

@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import { ArtVariant } from "@/lib/content";
 import clsx from "clsx";
 
@@ -47,6 +48,7 @@ function buildGradient(variant: ArtVariant, seed: number): string {
 interface PlaceholderArtProps {
   variant: ArtVariant;
   className?: string;
+  style?: CSSProperties;
   role?: string;
   "aria-label"?: string;
 }
@@ -54,6 +56,7 @@ interface PlaceholderArtProps {
 export default function PlaceholderArt({
   variant,
   className,
+  style,
   role,
   ...rest
 }: PlaceholderArtProps) {
@@ -66,7 +69,7 @@ export default function PlaceholderArt({
       aria-label={ariaLabel}
       aria-hidden={ariaLabel ? undefined : true}
       className={clsx("relative overflow-hidden grain", className)}
-      style={{ backgroundImage: buildGradient(variant, seed) }}
+      style={{ backgroundImage: buildGradient(variant, seed), ...style }}
     >
       <div
         className="absolute inset-0"
