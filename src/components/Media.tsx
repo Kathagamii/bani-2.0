@@ -19,8 +19,12 @@ interface MediaProps {
  */
 export default function Media({ slot, className, style, sizes, priority }: MediaProps) {
   if (slot.src) {
+    // Если вызывающий код уже передал "absolute" (фон на весь блок), нельзя
+    // одновременно навязывать "relative" — в скомпилированном Tailwind CSS
+    // оно идёт позже "absolute" и перебивает его, оставляя блок в потоке.
+    const hasOwnPosition = /\b(?:absolute|fixed|sticky)\b/.test(className ?? "");
     return (
-      <div className={clsx("relative overflow-hidden", className)} style={style}>
+      <div className={clsx(hasOwnPosition ? "overflow-hidden" : "relative overflow-hidden", className)} style={style}>
         <Image
           src={slot.src}
           alt={slot.alt}

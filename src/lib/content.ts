@@ -44,17 +44,28 @@ export const nav = [
   { label: "Контакты", href: "#contact" },
 ];
 
+export type HeroBenefitIcon = "layout" | "leaf" | "user" | "settings" | "mapPin";
+
 export const hero = {
-  eyebrow: `${brand.city} · ${brand.addressShort}`,
-  title: "АВТОРСКИЕ\nБАНИ",
-  subtitle:
-    "Проектируем и строим бани под ключ — как часть архитектуры участка, а не типовое решение из каталога.",
-  cta: "Обсудить проект",
+  eyebrow: "Авторские бани под ключ",
+  headline: "Спроектируем и построим баню под ваш участок —",
+  headlineSecondary: "без типовых решений и десятка подрядчиков.",
+  bodyIntro: "Один подрядчик отвечает за весь проект:",
+  processSteps: ["Замер", "Проект", "Материалы", "Строительство", "Инженерия", "Отделка"],
+  bodyClosing: "Вы получаете готовую баню, где всё работает как единая система.",
+  cta: "Рассчитать проект",
   scrollLabel: "SCROLL",
   media: {
     alt: "Тёмное дерево и пар — атмосфера авторской бани",
     variant: "interior",
   } satisfies MediaSlot,
+  benefits: [
+    { icon: "layout", label: "Индивидуальный проект под ваш участок" },
+    { icon: "leaf", label: "Премиальные материалы" },
+    { icon: "user", label: "Один подрядчик" },
+    { icon: "settings", label: "Полный цикл" },
+    { icon: "mapPin", label: `${brand.city} и Свердловская область` },
+  ] satisfies { icon: HeroBenefitIcon; label: string }[],
 };
 
 export const philosophy = {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MapPin } from "lucide-react";
 import clsx from "clsx";
 import { brand, nav } from "@/lib/content";
 import LogoMark from "./LogoMark";
@@ -49,7 +49,11 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-6 lg:flex">
+            <span className="flex items-center gap-1.5 text-[13px] text-linen/70">
+              <MapPin size={15} className="text-copper-light" />
+              {brand.city}
+            </span>
             <a
               href="#contact"
               className="inline-flex items-center border border-copper-light/60 px-5 py-2.5 text-[13px] tracking-[0.08em] uppercase text-milk hover:bg-copper-light hover:text-ink hover:border-copper-light transition-colors duration-300"

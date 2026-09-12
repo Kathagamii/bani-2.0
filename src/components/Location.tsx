@@ -52,8 +52,14 @@ export default function Location() {
                 </a>
               </div>
 
-              <div className="border-t border-linen/12 pt-8">
-                <ContactForm />
+              <div className="mt-2 border border-linen/12 bg-charcoal/70 p-6 sm:p-8">
+                <h3 className="font-serif text-xl text-milk">Оставить заявку</h3>
+                <p className="mt-1.5 text-[13px] leading-relaxed text-linen/55">
+                  Расскажите об участке или объекте — свяжемся и обсудим детали.
+                </p>
+                <div className="mt-6">
+                  <ContactForm />
+                </div>
               </div>
             </Reveal>
           </div>

@@ -49,7 +49,7 @@ export default function ContactForm() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="mt-2 w-full border-b border-linen/25 bg-transparent py-2.5 text-milk outline-none transition-colors focus:border-copper-light"
+                className="mt-2 w-full rounded-sm border border-linen/20 bg-ink/40 px-4 py-3 text-milk outline-none transition-colors focus:border-copper-light"
                 placeholder="Как к вам обращаться"
               />
             </div>
@@ -63,7 +63,7 @@ export default function ContactForm() {
                 onChange={(e) => setPhone(e.target.value)}
                 required
                 type="tel"
-                className="mt-2 w-full border-b border-linen/25 bg-transparent py-2.5 text-milk outline-none transition-colors focus:border-copper-light"
+                className="mt-2 w-full rounded-sm border border-linen/20 bg-ink/40 px-4 py-3 text-milk outline-none transition-colors focus:border-copper-light"
                 placeholder="+7"
               />
             </div>
@@ -74,13 +74,13 @@ export default function ContactForm() {
               <textarea
                 id="message"
                 rows={2}
-                className="mt-2 w-full resize-none border-b border-linen/25 bg-transparent py-2.5 text-milk outline-none transition-colors focus:border-copper-light"
+                className="mt-2 w-full resize-none rounded-sm border border-linen/20 bg-ink/40 px-4 py-3 text-milk outline-none transition-colors focus:border-copper-light"
                 placeholder="Участок, коттедж, коммерческий объект — если уже знаете"
               />
             </div>
             <button
               type="submit"
-              className="mt-2 inline-flex items-center gap-3 border border-copper-light/60 px-7 py-3.5 text-[13px] tracking-[0.1em] uppercase text-milk transition-colors duration-300 hover:bg-copper-light hover:text-ink"
+              className="mt-2 inline-flex w-full items-center justify-center gap-3 border border-copper-light/60 bg-copper-light px-7 py-3.5 text-[13px] tracking-[0.1em] uppercase text-ink transition-colors duration-300 hover:bg-transparent hover:text-milk sm:w-auto"
             >
               Отправить заявку
             </button>

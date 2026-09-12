@@ -63,12 +63,18 @@ export default function PlaceholderArt({
   const ariaLabel = rest["aria-label"];
   const seed = seedFromString(`${variant}:${ariaLabel ?? ""}`);
 
+  // Нужна хоть какая-то позиция (для inset-0 у вложенного бликового слоя), но
+  // если вызывающий код уже передал "absolute" (фон на весь блок), нельзя
+  // одновременно навязывать "relative" — в скомпилированном Tailwind CSS оно
+  // идёт позже "absolute" и просто перебивает его, оставляя блок в потоке.
+  const hasOwnPosition = /\b(?:absolute|fixed|sticky)\b/.test(className ?? "");
+
   return (
     <div
       role={ariaLabel ? role ?? "img" : undefined}
       aria-label={ariaLabel}
       aria-hidden={ariaLabel ? undefined : true}
-      className={clsx("relative overflow-hidden grain", className)}
+      className={clsx(hasOwnPosition ? "overflow-hidden grain" : "relative overflow-hidden grain", className)}
       style={{ backgroundImage: buildGradient(variant, seed), ...style }}
     >
       <div
