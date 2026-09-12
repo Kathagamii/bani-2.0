@@ -28,9 +28,9 @@ function buildGradient(variant: ArtVariant, seed: number): string {
       return `radial-gradient(130% 110% at ${100 - x1}% ${y1}%, #a49a89 0%, #6f6659 40%, #23201a 80%),
               linear-gradient(${angle}deg, rgba(245,240,230,0.12) 0%, rgba(0,0,0,0) 50%)`;
     case "steam":
-      return `radial-gradient(70% 60% at ${x1}% ${y1}%, rgba(245,240,230,0.32) 0%, rgba(245,240,230,0) 60%),
-              radial-gradient(80% 55% at ${x2}% ${y2}%, rgba(245,240,230,0.22) 0%, rgba(245,240,230,0) 65%),
-              radial-gradient(100% 45% at 50% 88%, rgba(245,240,230,0.16) 0%, rgba(245,240,230,0) 70%),
+      return `radial-gradient(70% 60% at ${x1}% ${y1}%, rgba(180,186,191,0.30) 0%, rgba(180,186,191,0) 60%),
+              radial-gradient(80% 55% at ${x2}% ${y2}%, rgba(245,240,230,0.20) 0%, rgba(245,240,230,0) 65%),
+              radial-gradient(100% 45% at 50% 88%, rgba(139,144,150,0.22) 0%, rgba(139,144,150,0) 70%),
               linear-gradient(180deg, #1c1712 0%, #0d0b09 100%)`;
     case "fire":
       return `radial-gradient(85% 80% at ${65 + seed * 20}% ${75 + seed * 12}%, #cd9a63 0%, #ab7443 26%, #3c2416 58%, #120d09 82%),

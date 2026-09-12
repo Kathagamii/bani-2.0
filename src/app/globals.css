@@ -1,18 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* base palette — near-black, wood, stone, milk, copper accent */
-  --color-ink: #0d0b09;
-  --color-charcoal: #16130f;
-  --color-bark: #241d16;
-  --color-espresso: #392c20;
-  --color-wood: #6b4c35;
-  --color-stone: #8f887c;
-  --color-sand: #cdbea3;
-  --color-linen: #ece3d4;
-  --color-milk: #f5f0e6;
-  --color-copper: #ab7443;
-  --color-copper-light: #cd9a63;
+  /* base palette — tuned to the studio's logo: charred wood, warm birch
+     tan and copper for warmth, with a cool smoke grey pulled straight from
+     the logo's steam so secondary text reads as a deliberate counterpoint
+     rather than blending into the warm background. */
+  --color-ink: #130d08;
+  --color-charcoal: #1b140d;
+  --color-bark: #2c2013;
+  --color-espresso: #40301c;
+  --color-wood: #7a5230;
+  --color-stone: #7d8288;
+  --color-smoke: #8b9096;
+  --color-smoke-light: #aeb3b7;
+  --color-sand: #cdbe9f;
+  --color-linen: #ece3d3;
+  --color-milk: #f6f0e3;
+  --color-copper: #a5713c;
+  --color-copper-light: #c99a5c;
 
   --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -24,6 +29,8 @@
   --color-espresso: var(--color-espresso);
   --color-wood: var(--color-wood);
   --color-stone: var(--color-stone);
+  --color-smoke: var(--color-smoke);
+  --color-smoke-light: var(--color-smoke-light);
   --color-sand: var(--color-sand);
   --color-linen: var(--color-linen);
   --color-milk: var(--color-milk);

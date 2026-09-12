@@ -1,12 +1,16 @@
 import { brand, nav } from "@/lib/content";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
     <footer className="border-t border-linen/10 bg-ink py-12">
       <div className="container-edit flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          <p className="font-serif text-2xl text-milk">Авторские бани</p>
-          <p className="mt-2 max-w-xs text-[13px] leading-relaxed text-linen/55">
+          <div className="flex items-center gap-3">
+            <Logo boxClassName="h-11 w-14" />
+            <p className="font-serif text-2xl text-milk">Авторские бани</p>
+          </div>
+          <p className="mt-3 max-w-xs text-[13px] leading-relaxed text-linen/55">
             Проектирование и строительство бань под ключ в {brand.region}.
           </p>
         </div>
