@@ -192,6 +192,7 @@ export const gallery = {
     { src: "/gallery/8.png", width: 1210, height: 912, alt: "Многоярусные полки парной", variant: "wood" },
     { src: "/gallery/5.png", width: 679, height: 913, alt: "Гималайская соль и полукруглые полки", variant: "stone" },
     { src: "/gallery/9.png", width: 781, height: 1057, alt: "Полки и кирпичная кладка печи", variant: "wood" },
+    { src: "/gallery/7.png", width: 1366, height: 909, alt: "Полки и веники в парной", variant: "wood" },
   ] satisfies MediaSlot[],
 };
 
