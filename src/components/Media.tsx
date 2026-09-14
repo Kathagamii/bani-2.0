@@ -10,6 +10,9 @@ interface MediaProps {
   style?: CSSProperties;
   sizes?: string;
   priority?: boolean;
+  /** Точка фокуса кропа object-cover, напр. "center bottom" — полезно, когда
+   *  главный сюжет фото смещён к одному краю кадра. */
+  objectPosition?: string;
 }
 
 /**
@@ -17,7 +20,7 @@ interface MediaProps {
  * Пока реальных фото нет — показывает атмосферный placeholder того же
  * формата, так что замена на реальные снимки не потребует правок вёрстки.
  */
-export default function Media({ slot, className, style, sizes, priority }: MediaProps) {
+export default function Media({ slot, className, style, sizes, priority, objectPosition }: MediaProps) {
   if (slot.src) {
     // Если вызывающий код уже передал "absolute" (фон на весь блок), нельзя
     // одновременно навязывать "relative" — в скомпилированном Tailwind CSS
@@ -32,6 +35,7 @@ export default function Media({ slot, className, style, sizes, priority }: Media
           sizes={sizes ?? "100vw"}
           priority={priority}
           className="object-cover"
+          style={objectPosition ? { objectPosition } : undefined}
         />
       </div>
     );

@@ -155,7 +155,13 @@ export const process = {
   linkLabel: "Как мы работаем",
   linkHref: "#contact",
   steps: ["Замер", "Проект", "Материалы", "Строительство", "Отделка", "Инженерия", "Готовая баня"],
-  media: { alt: "Замер материала перед строительством", variant: "wood" } satisfies MediaSlot,
+  media: {
+    src: "/photos/process.jpg",
+    width: 1024,
+    height: 229,
+    alt: "Замер материала перед строительством",
+    variant: "wood",
+  } satisfies MediaSlot,
 };
 
 export const gallery = {
