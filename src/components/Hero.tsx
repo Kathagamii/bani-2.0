@@ -20,9 +20,6 @@ export default function Hero() {
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <Media slot={hero.media} className="absolute inset-0 h-full w-full" priority sizes="100vw" />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-ink" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
-
       <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col justify-end">
         <div className="container-edit pb-16 md:pb-20">
           <motion.p
