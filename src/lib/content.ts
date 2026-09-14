@@ -68,10 +68,34 @@ export const highlights = {
   linkLabel: "Смотреть все фото",
   linkHref: "#gallery",
   items: [
-    { alt: "Интерьер парной с тёплым светом", variant: "wood" },
-    { alt: "Вид на лес и озеро от бани", variant: "water" },
-    { alt: "Огонь в печи", variant: "fire" },
-    { alt: "Спил бревна — фактура дерева", variant: "wood" },
+    {
+      src: "/photos/highlight-cedar-trunk.png",
+      width: 498,
+      height: 503,
+      alt: "Ствол кедра в лучах заката",
+      variant: "wood",
+    },
+    {
+      src: "/photos/highlight-woodpile.png",
+      width: 501,
+      height: 495,
+      alt: "Деревянный брус — свет и тень",
+      variant: "wood",
+    },
+    {
+      src: "/photos/highlight-stone.png",
+      width: 496,
+      height: 483,
+      alt: "Мокрый камень — фактура",
+      variant: "stone",
+    },
+    {
+      src: "/photos/highlight-charred-wood.png",
+      width: 421,
+      height: 418,
+      alt: "Обожжённая доска — фактура дерева",
+      variant: "wood",
+    },
   ] satisfies MediaSlot[],
 };
 
