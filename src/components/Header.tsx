@@ -33,8 +33,14 @@ export default function Header() {
         )}
       >
         <div className="container-edit flex items-center justify-between">
-          <a href="#top" className="flex items-center">
-            <LogoMark className="h-14 sm:h-16 md:h-20" priority />
+          <a href="#top" className="flex items-center gap-3">
+            <LogoMark className="h-10 sm:h-12" priority />
+            <span className="leading-tight">
+              <span className="block font-serif text-base text-milk sm:text-lg">Авторские</span>
+              <span className="block text-[10px] tracking-[0.12em] text-linen/60 uppercase sm:text-[11px]">
+                бани под ключ
+              </span>
+            </span>
           </a>
 
           <nav className="hidden lg:flex items-center gap-8">

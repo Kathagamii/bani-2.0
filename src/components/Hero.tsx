@@ -2,17 +2,9 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { LayoutTemplate, Leaf, User, Settings, MapPin, LucideIcon } from "lucide-react";
-import { hero, HeroBenefitIcon } from "@/lib/content";
+import { MapPin } from "lucide-react";
+import { hero } from "@/lib/content";
 import Media from "./Media";
-
-const BENEFIT_ICONS: Record<HeroBenefitIcon, LucideIcon> = {
-  layout: LayoutTemplate,
-  leaf: Leaf,
-  user: User,
-  settings: Settings,
-  mapPin: MapPin,
-};
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -21,71 +13,60 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
 
+  const [line1, line2] = hero.headline.split("\n");
+
   return (
-    <section id="top" ref={ref} className="relative min-h-[100svh] w-full overflow-hidden bg-ink">
+    <section id="top" ref={ref} className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-ink">
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <Media slot={hero.media} className="absolute inset-0 h-full w-full" priority sizes="100vw" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-ink" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
 
-      <motion.div style={{ opacity }} className="relative z-10 flex min-h-[100svh] flex-col justify-center">
-        <div className="container-edit py-32 sm:py-36">
+      <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col justify-end">
+        <div className="container-edit pb-16 md:pb-20">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="mb-5 text-[12px] tracking-[0.14em] uppercase text-sand/90 sm:text-[13px] sm:tracking-[0.2em]"
           >
             {hero.eyebrow}
           </motion.p>
 
-          <h1 className="font-serif leading-[1.12] text-milk">
+          <h1 className="font-serif font-medium leading-[1.08] text-milk">
             <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="block max-w-2xl text-3xl font-medium sm:text-4xl lg:text-5xl"
+              transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="block text-4xl sm:text-5xl lg:text-6xl"
             >
-              {hero.headline}
+              {line1}
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-2 block max-w-xl text-xl text-linen/85 sm:text-2xl lg:text-[1.7rem]"
+              transition={{ duration: 0.9, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
+              className="block text-4xl sm:text-5xl lg:text-6xl"
             >
-              {hero.headlineSecondary}
+              {line2}
             </motion.span>
           </h1>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-7 max-w-xl"
+            transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-6 max-w-sm text-[15px] leading-relaxed text-linen/85 sm:text-base"
           >
-            <p className="text-[15px] leading-relaxed text-linen/80 sm:text-base">{hero.bodyIntro}</p>
-            <div className="mt-2.5 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[13px] text-linen/65 sm:text-[14px]">
-              {hero.processSteps.map((step, i) => (
-                <span key={step} className="flex items-center gap-2.5">
-                  {step}
-                  {i < hero.processSteps.length - 1 && (
-                    <span className="text-copper-light/70">→</span>
-                  )}
-                </span>
-              ))}
-            </div>
-            <p className="mt-4 text-[15px] leading-relaxed text-linen/80 sm:text-base">
-              {hero.bodyClosing}
-            </p>
-          </motion.div>
+            {hero.subtitle}
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-9"
+            transition={{ duration: 0.8, delay: 0.68, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-8"
           >
             <a
               href="#contact"
@@ -97,20 +78,13 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-12 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:mt-16 lg:flex lg:flex-wrap lg:gap-x-10"
+            className="mt-7 flex items-center gap-2 text-[13px] text-linen/70"
           >
-            {hero.benefits.map((benefit) => {
-              const Icon = BENEFIT_ICONS[benefit.icon];
-              return (
-                <div key={benefit.label} className="flex max-w-[12rem] items-start gap-3">
-                  <Icon size={19} className="mt-0.5 shrink-0 text-copper-light" />
-                  <span className="text-[13px] leading-snug text-linen/75">{benefit.label}</span>
-                </div>
-              );
-            })}
+            <MapPin size={15} className="text-copper-light" />
+            {hero.locationTag}
           </motion.div>
         </div>
       </motion.div>

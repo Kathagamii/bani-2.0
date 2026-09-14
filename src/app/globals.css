@@ -49,6 +49,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* компенсируем фиксированную шапку, чтобы якорные переходы не прятали
+   заголовок секции под ней */
+section[id] {
+  scroll-margin-top: 7.5rem;
+}
+
 body {
   font-family: var(--font-sans);
   overflow-x: hidden;

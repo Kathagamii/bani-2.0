@@ -8,6 +8,7 @@ import { gallery } from "@/lib/content";
 import Media from "./Media";
 import Reveal from "./Reveal";
 import PlaceholderArt from "./PlaceholderArt";
+import SectionKicker from "./SectionKicker";
 
 const ASPECTS = ["aspect-[3/4]", "aspect-square", "aspect-[4/5]", "aspect-[3/4]"];
 
@@ -34,16 +35,13 @@ export default function Gallery() {
   }, [active]);
 
   return (
-    <section id="gallery" className="relative bg-charcoal py-24 sm:py-32 lg:py-40">
+    <section id="gallery" className="relative bg-charcoal py-20 sm:py-28">
       <div className="container-edit">
         <Reveal>
-          <span className="flex items-center gap-3 text-[13px] tracking-[0.2em] uppercase text-copper-light">
-            <span className="h-px w-8 bg-copper-light/70" />
-            {gallery.index} — {gallery.kicker}
-          </span>
+          <SectionKicker label={gallery.kicker} />
         </Reveal>
         <Reveal delay={0.08}>
-          <h2 className="mt-7 font-serif text-4xl leading-[1.05] text-milk sm:text-5xl lg:text-6xl">
+          <h2 className="mt-5 font-serif text-3xl leading-[1.1] text-milk sm:text-4xl lg:text-5xl">
             {gallery.title}
           </h2>
         </Reveal>

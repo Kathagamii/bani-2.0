@@ -1,14 +1,11 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Philosophy from "@/components/Philosophy";
-import Process from "@/components/Process";
-import Formats from "@/components/Formats";
+import Highlights from "@/components/Highlights";
+import Projects from "@/components/Projects";
 import Materials from "@/components/Materials";
+import Process from "@/components/Process";
 import Gallery from "@/components/Gallery";
-import Statement from "@/components/Statement";
-import WhyUs from "@/components/WhyUs";
-import Location from "@/components/Location";
-import FinalCta from "@/components/FinalCta";
+import Connect from "@/components/Connect";
 import Footer from "@/components/Footer";
 import MobileStickyCta from "@/components/MobileStickyCta";
 
@@ -18,15 +15,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Philosophy />
-        <Process />
-        <Formats />
+        <Highlights />
+        <Projects />
         <Materials />
+        <Process />
         <Gallery />
-        <Statement />
-        <WhyUs />
-        <Location />
-        <FinalCta />
+        <Connect />
       </main>
       <Footer />
       <MobileStickyCta />
