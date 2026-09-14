@@ -52,6 +52,9 @@ export const hero = {
   locationTag: brand.region,
   scrollLabel: "SCROLL",
   media: {
+    src: "/photos/hero.png",
+    width: 1673,
+    height: 940,
     alt: "Баня в лесу на закате",
     variant: "interior",
   } satisfies MediaSlot,
@@ -112,17 +115,35 @@ export const materials = {
     {
       title: "Кедр",
       description: "Тёплый аромат · натуральная фактура",
-      media: { alt: "Кедровая отделка парной", variant: "wood" } satisfies MediaSlot,
+      media: {
+        src: "/photos/cedar.png",
+        width: 1536,
+        height: 1024,
+        alt: "Кедровая отделка парной",
+        variant: "wood",
+      } satisfies MediaSlot,
     },
     {
       title: "Абаши",
       description: "Мягкое тепло · комфорт полков",
-      media: { alt: "Полок из абаши", variant: "wood" } satisfies MediaSlot,
+      media: {
+        src: "/photos/abashi.png",
+        width: 1536,
+        height: 1024,
+        alt: "Полок из абаши",
+        variant: "wood",
+      } satisfies MediaSlot,
     },
     {
       title: "Термодерево",
       description: "Глубокий оттенок · устойчивость к влаге",
-      media: { alt: "Термообработанная древесина", variant: "wood" } satisfies MediaSlot,
+      media: {
+        src: "/photos/thermowood.jpg",
+        width: 1024,
+        height: 559,
+        alt: "Термообработанная древесина",
+        variant: "wood",
+      } satisfies MediaSlot,
     },
   ],
 };
